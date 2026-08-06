@@ -1,17 +1,28 @@
+'use client';
+
+import { useEffect, useRef } from "react";
 import { heroData } from "@/data/hero";
 
 import EditorHeader from "./EditorHeader";
 import CodePreview from "./CodePreview";
 import StatusBar from "./StatusBar";
-
 export default function DeveloperCard() {
   const { developer } = heroData;
-
+    console.log("DeveloperCard rendered");
+    const cardRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (!cardRef.current) return;
+        console.log("inside useEffect");
+        console.log(cardRef.current);
+        console.log(cardRef.current.getBoundingClientRect());
+    }, []);
   return (
-    <div className="
+    <div 
+    ref={cardRef}
+    className="
         relative
         w-full
-        max-w-sm
+        max-w-lg
         rounded-3xl
         border
         border-zinc-800
