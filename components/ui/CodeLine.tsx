@@ -3,9 +3,11 @@ import { ReactNode } from "react";
 interface CodeLineProps {
   number: number;
   children: ReactNode;
+  active?: boolean;
 }
 
 export default function CodeLine({
+  active = false,
   number,
   children,
 }: CodeLineProps) {
@@ -25,7 +27,17 @@ export default function CodeLine({
         {number}
       </span>
 
-      <div className="flex-1">
+      <div
+        className={`
+          flex-1
+          rounded-sm
+          ${
+            active
+              ? "border-l border-indigo-400/70 bg-white/[0.05] pl-1"
+              : ""
+          }
+        `}
+      >
         {children}
       </div>
     </div>

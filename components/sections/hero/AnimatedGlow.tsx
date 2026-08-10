@@ -5,10 +5,23 @@ import { motion } from "framer-motion";
 export default function AnimatedGlow() {
   return (
     <motion.div
-      className="absolute h-[420px] w-[420px] rounded-full bg-indigo-500/15 blur-3xl"
+      className="
+        pointer-events-none
+        absolute
+        left-1/2
+        top-1/2
+        z-0
+        h-[420px]
+        w-[420px]
+        -translate-x-1/2
+        -translate-y-1/2
+        rounded-full
+        bg-indigo-400
+        blur-3xl
+      "
       animate={{
-        opacity: [0.15, 0.3, 0.15],
-        scale: [1, 1.05, 1],
+        opacity: [.5, 0.14, .5],
+        scale: [1, 1.04, 1],
       }}
       transition={{
         duration: 6,

@@ -11,7 +11,7 @@ export default function HeroContent() {
 
       {/* Identity */}
       <div className="mt-3 space-y-4">
-        <h2 className="text-3xl font-bold tracking-tight text-white">
+        <h2 className="text-xl sm:text-2xl xl:text-3xl tracking-wide text-zinc-400">
           {heroData.name}
         </h2>
 
