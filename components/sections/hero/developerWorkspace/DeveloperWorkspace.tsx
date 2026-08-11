@@ -138,9 +138,9 @@ export default function DeveloperWorkspace() {
           fileName={developer.fileName}
         />
 
-        <WorkspaceCode
-          code={developer.code}
-        />
+      <WorkspaceCode
+        code={developer.code}
+      />
 
         <WorkspaceFooter
           available={developer.available}
