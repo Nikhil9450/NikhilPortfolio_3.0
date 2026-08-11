@@ -19,7 +19,7 @@ export default function HeroContent() {
         <h1
           className="
             max-w-[22ch]
-            text-2xl
+            text-3xl
             font-bold
             leading-tight
             tracking-tight
