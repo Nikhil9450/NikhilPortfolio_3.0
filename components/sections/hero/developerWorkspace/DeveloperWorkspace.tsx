@@ -105,13 +105,16 @@ export default function DeveloperWorkspace() {
       className="
         relative
         w-full
+        min-w-0
         max-w-lg
         overflow-hidden
         rounded-3xl
         border
         border-zinc-800/80
         bg-zinc-900/75
-        p-10
+        p-5 
+        sm:p-8 
+        lg:p-10
         backdrop-blur-xl
         shadow-[0_25px_80px_rgba(0,0,0,0.35)]
         will-change-transform

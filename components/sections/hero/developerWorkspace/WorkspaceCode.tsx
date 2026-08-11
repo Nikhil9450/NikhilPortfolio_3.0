@@ -16,7 +16,7 @@ export default function WorkspaceCode({
   code,
 }: WorkspaceCodeProps) {
   return (
-    <div className="bg-black/40 px-6 py-5 font-mono text-sm whitespace-nowrap overflow-x-auto">
+    <div className="bg-black/40 px-4 sm:px-6 py-5 font-mono text-[10px] sm:text-xs lg:text-sm whitespace-nowrap overflow-x-auto">
       <CodeLine number={1}>
         <span className="text-purple-400">
           {code.declaration}

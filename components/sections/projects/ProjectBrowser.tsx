@@ -1,11 +1,15 @@
+import Image from "next/image";
+
 interface ProjectBrowserProps {
   title: string;
   category: string;
+  image: string;
 }
 
 export default function ProjectBrowser({
   title,
   category,
+  image,
 }: ProjectBrowserProps) {
   return (
     <div className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950">
@@ -17,22 +21,27 @@ export default function ProjectBrowser({
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
         </div>
 
-        <div className="text-xs text-zinc-600">
+        <span className="text-xs text-zinc-600">
           {category}
-        </div>
+        </span>
       </div>
 
-      {/* Preview */}
-      <div className="flex min-h-[420px] items-center justify-center bg-zinc-900/60">
-        <div className="text-center">
-          <p className="text-sm text-zinc-600">
-            Project Preview
-          </p>
-
-          <p className="mt-2 text-lg text-zinc-500">
-            {title}
-          </p>
-        </div>
+      {/* Project Preview */}
+      <div className="group relative aspect-[16/9] overflow-hidden bg-zinc-900">
+        <Image
+            src={image}
+            alt={`${title} project preview`}
+            fill
+            className="
+                object-cover
+                object-top
+                transition-transform
+                duration-500
+                ease-out
+                group-hover:scale-[1.02]
+            "
+            sizes="(max-width: 768px) 100vw, 1200px"
+        />
       </div>
     </div>
   );

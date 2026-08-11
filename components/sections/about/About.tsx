@@ -2,7 +2,7 @@ import { aboutData } from "@/data/about";
 
 export default function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className=" py-32">
       <div className="mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="max-w-3xl">

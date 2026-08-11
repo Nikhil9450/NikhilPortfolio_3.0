@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 import { techStack,heroData } from "@/data/hero";
+import TechIcon from "@/components/ui/TechIcon";
 export default function HeroContent() {
   return (
     <div className="flex flex-col justify-center">
@@ -10,8 +11,8 @@ export default function HeroContent() {
       </span>
 
       {/* Identity */}
-      <div className="mt-3 space-y-4">
-        <h2 className="text-xl sm:text-2xl xl:text-3xl tracking-wide text-zinc-400">
+      <div className="space-y-4">
+        <h2 className="text-xl sm:text-2xl xl:text-3xl tracking-wide text-zinc-100">
           {heroData.name}
         </h2>
 
@@ -46,12 +47,12 @@ export default function HeroContent() {
 
       {/* Actions */}
       <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-        <Button href="/contact">
+        <Button href="#contact">
           Hire Me
         </Button>
 
         <Button
-          href="/projects"
+          href="#projects"
           variant="secondary"
         >
           View Projects
@@ -66,7 +67,10 @@ export default function HeroContent() {
 
         <div className="flex flex-wrap gap-3">
           {techStack.map((tech) => (
-            <Badge key={tech}>{tech}</Badge>
+            <Badge key={tech}>
+              <TechIcon tech={tech} />
+              <span>{tech}</span>
+            </Badge>
           ))}
         </div>
       </div>

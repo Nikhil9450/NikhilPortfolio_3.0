@@ -1,6 +1,7 @@
 import { projectsData } from "@/data/projects";
 import ProjectBrowser from "./ProjectBrowser";
-
+import ProjectRow from "./ProjectRow";
+import ProjectLinks from "./ProjectLinks";
 export default function Projects() {
   const featuredProject = projectsData.projects.find(
     (project) => project.featured
@@ -9,7 +10,7 @@ export default function Projects() {
   if (!featuredProject) return null;
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className=" py-32">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="max-w-3xl">
@@ -28,20 +29,23 @@ export default function Projects() {
 
         {/* Featured Project */}
         <div className="mt-16">
-          <ProjectBrowser
+        <ProjectBrowser
             title={featuredProject.title}
             category={featuredProject.category}
-          />
+            image={featuredProject.image}
+        />
 
           <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm text-zinc-600">
-                {featuredProject.number}
-              </p>
+                <div className="flex items-baseline gap-4">
+                    <span className="text-sm text-zinc-600">
+                        {featuredProject.number}
+                    </span>
 
-              <h3 className="mt-2 text-2xl font-medium text-white">
-                {featuredProject.title}
-              </h3>
+                    <h3 className="text-2xl font-medium text-white">
+                        {featuredProject.title}
+                    </h3>
+                </div>
 
               <p className="mt-4 leading-7 text-zinc-400">
                 {featuredProject.description}
@@ -60,7 +64,31 @@ export default function Projects() {
                 )
               )}
             </div>
+            <ProjectLinks
+                title={featuredProject.title}
+                liveUrl={featuredProject.liveUrl}
+                githubUrl={featuredProject.githubUrl}
+            />  
           </div>
+        </div>
+        {/* Secondary Projects */}
+        <div className="mt-20 space-y-8">
+        {projectsData.projects
+            .filter((project) => !project.featured)
+            .map((project, index) => (
+                <ProjectRow
+                key={project.number}
+                number={project.number}
+                title={project.title}
+                description={project.description}
+                category={project.category}
+                technologies={project.technologies}
+                image={project.image}
+                liveUrl={project.liveUrl}
+                githubUrl={project.githubUrl}
+                reversed={index % 2 === 1}
+                />
+            ))}
         </div>
       </div>
     </section>
