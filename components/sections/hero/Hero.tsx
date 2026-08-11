@@ -5,7 +5,7 @@ import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
   return (
-    <section id="home" className="scroll-mt-28 py-24 lg:py-10">
+    <section id="home" className="scroll-mt-28 py-24 lg:py-15">
       <Container>
         <div className="
               grid

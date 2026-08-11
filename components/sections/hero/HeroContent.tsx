@@ -12,14 +12,14 @@ export default function HeroContent() {
 
       {/* Identity */}
       <div className="space-y-4">
-        <h2 className="text-xl sm:text-2xl xl:text-3xl tracking-wide text-zinc-100">
+        <h2 className="text-xl sm:text-2xl font-bold xl:text-3xl tracking-wide text-zinc-100">
           {heroData.name}
         </h2>
 
         <h1
           className="
             max-w-[22ch]
-            text-3xl
+            text-2xl
             font-bold
             leading-tight
             tracking-tight
@@ -35,7 +35,7 @@ export default function HeroContent() {
       {/* Description */}
       <p
         className="
-          mt-8
+          mt-4
           max-w-lg
           text-lg
           leading-8
@@ -46,7 +46,7 @@ export default function HeroContent() {
       </p>
 
       {/* Actions */}
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+      <div className="mt-4 flex flex-col gap-4 sm:flex-row">
         <Button href="#contact">
           Hire Me
         </Button>
@@ -60,7 +60,7 @@ export default function HeroContent() {
       </div>
 
       {/* Tech Stack */}
-      <div className="mt-12">
+      <div className="mt-8">
         <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
           Tech Stack
         </p>
