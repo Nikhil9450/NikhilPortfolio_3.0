@@ -1,8 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+} from "framer-motion";
 
 export default function AnimatedGlow() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
       className="
@@ -19,15 +24,23 @@ export default function AnimatedGlow() {
         bg-indigo-400
         blur-3xl
       "
-      animate={{
-        opacity: [.5, 0.14, .5],
-        scale: [1, 1.04, 1],
-      }}
-      transition={{
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
+      animate={
+        shouldReduceMotion
+          ? undefined
+          : {
+              opacity: [0.5, 0.14, 0.5],
+              scale: [1, 1.04, 1],
+            }
+      }
+      transition={
+        shouldReduceMotion
+          ? undefined
+          : {
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }
+      }
     />
   );
 }
