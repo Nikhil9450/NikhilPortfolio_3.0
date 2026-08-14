@@ -2,7 +2,7 @@ import { experienceData } from "@/data/experience";
 
 export default function Experience() {
   return (
-    <section id="experience" className=" py-32">
+    <section id="experience" className=" py-25">
       <div className="mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="max-w-3xl">

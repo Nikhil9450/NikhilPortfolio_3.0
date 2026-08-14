@@ -2,7 +2,7 @@ import { contactData } from "@/data/contact";
 
 export default function Contact() {
   return (
-    <section id="contact" className=" py-32">
+    <section id="contact" className=" py-25">
       <div className="mx-auto max-w-7xl px-6 pb-20">
         <div className="border-t border-zinc-800 pt-16">
           {/* Section Label */}
